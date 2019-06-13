@@ -35,6 +35,12 @@ var options = {
 viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
 ```
 
+> 高德地图
+
+```js
+viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider())
+```
+
 ## GoogleImageryProvider
 
 > 谷歌地图
