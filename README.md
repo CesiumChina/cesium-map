@@ -2,22 +2,42 @@
 
 cesium-map
 
-···warning
-使用前引入 cesium
-···
+> 使用前引入 Cesium 框架
 
 ## BaiduImageryProvider
 
 > 百度地图
 
 ```js
-viewer.imageryLayers.addImageryProvider(new Cesium.BaiduImageryProvider())
+var options = {
+  style: 'normal'
+}
+viewer.imageryLayers.addImageryProvider(new Cesium.BaiduImageryProvider(options))
 ```
 
 ## TencentImageryProvider
 
-> 腾讯
+> 腾讯地图
 
 ```js
 viewer.imageryLayers.addImageryProvider(new Cesium.TencentImageryProvider())
+```
+
+> 天地图
+
+```js
+var options = {
+  layer: 'vec',
+  key: ''
+}
+viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
+```
+
+> 谷歌地图
+
+```js
+var options = {
+  style: 'sl' //矢量地图
+}
+viewer.imageryLayers.addImageryProvider(new Cesium.GoogleImageryProvider(options))
 ```
