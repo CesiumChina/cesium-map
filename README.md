@@ -4,7 +4,7 @@ cesium-map
 
 > 使用前引入 Cesium 框架
 
-## BaiduImageryProvider
+### BaiduImageryProvider
 
 > 百度地图
 
@@ -15,7 +15,7 @@ var options = {
 viewer.imageryLayers.addImageryProvider(new Cesium.BaiduImageryProvider(options))
 ```
 
-## TencentImageryProvider
+### TencentImageryProvider
 
 > 腾讯地图
 
@@ -23,7 +23,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.BaiduImageryProvider(options)
 viewer.imageryLayers.addImageryProvider(new Cesium.TencentImageryProvider())
 ```
 
-## TdtImageryProvider
+### TdtImageryProvider
 
 > 天地图
 
@@ -35,13 +35,15 @@ var options = {
 viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
 ```
 
+### AmapImageryProvider
+
 > 高德地图
 
 ```js
 viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider())
 ```
 
-## GoogleImageryProvider
+### GoogleImageryProvider
 
 > 谷歌地图
 
