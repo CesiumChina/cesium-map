@@ -23,6 +23,8 @@ viewer.imageryLayers.addImageryProvider(new Cesium.BaiduImageryProvider(options)
 viewer.imageryLayers.addImageryProvider(new Cesium.TencentImageryProvider())
 ```
 
+## TdtImageryProvider
+
 > 天地图
 
 ```js
@@ -32,6 +34,8 @@ var options = {
 }
 viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
 ```
+
+## GoogleImageryProvider
 
 > 谷歌地图
 
