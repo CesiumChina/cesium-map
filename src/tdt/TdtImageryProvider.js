@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2019-06-13 13:20:09
  * @Last Modified by: Caven
- * @Last Modified time: 2019-06-13 13:58:22
+ * @Last Modified time: 2019-06-24 15:46:32
  */
 
 class TdtImageryProvider extends Cesium.WebMapTileServiceImageryProvider {
