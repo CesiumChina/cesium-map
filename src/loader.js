@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2019-06-13 11:07:07
  * @Last Modified by: Caven
- * @Last Modified time: 2019-06-13 13:49:36
+ * @Last Modified time: 2019-08-03 15:44:20
  */
 import BaiduImageryProvider from './baidu/BaiduImageryProvider'
 import AmapImageryProvider from './amap/AmapImageryProvider'

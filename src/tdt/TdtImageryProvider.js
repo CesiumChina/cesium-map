@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2019-06-13 13:20:09
  * @Last Modified by: Caven
- * @Last Modified time: 2019-06-24 15:46:32
+ * @Last Modified time: 2019-08-03 15:43:57
  */
 
 class TdtImageryProvider extends Cesium.WebMapTileServiceImageryProvider {
@@ -10,7 +10,7 @@ class TdtImageryProvider extends Cesium.WebMapTileServiceImageryProvider {
     let url =
       'http://t{s}.tianditu.gov.cn/{layer}_c/wmts?service=WMTS&version=1.0.0&request=GetTile&tilematrix={TileMatrix}&layer={layer}&style={style}&tilerow={TileRow}&tilecol={TileCol}&tilematrixset={TileMatrixSet}&format=tiles&tk={key}'
     super({
-      url: url.replace(/\{layer\}/g, options.layer || 'vec').replace(/\{key\}/g, options.key || ''),
+      url: url.replace(/\{layer\}/g, options.style || 'vec').replace(/\{key\}/g, options.key || ''),
       style: 'default',
       format: 'tiles',
       tileMatrixSetID: 'c',

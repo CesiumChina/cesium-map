@@ -29,7 +29,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.TencentImageryProvider())
 
 ```js
 var options = {
-  layer: 'vec',
+  style: 'vec',
   key: ''
 }
 viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
@@ -40,7 +40,10 @@ viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
 > 高德地图
 
 ```js
-viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider())
+var options = {
+  style: 'img'
+}
+viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider(options))
 ```
 
 ### GoogleImageryProvider
@@ -49,7 +52,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider())
 
 ```js
 var options = {
-  style: 'sl' //矢量地图
+  style: 'img' //矢量地图
 }
 viewer.imageryLayers.addImageryProvider(new Cesium.GoogleImageryProvider(options))
 ```

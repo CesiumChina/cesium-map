@@ -2,12 +2,13 @@
  * @Author: Caven
  * @Date: 2019-06-13 11:15:42
  * @Last Modified by: Caven
- * @Last Modified time: 2019-06-13 13:57:33
+ * @Last Modified time: 2019-08-03 15:38:34
  */
 
+const TEMP_MAP_URL = 'http://api{s}.map.bdimg.com/customimage/tile?&x={x}&y={y}&z={z}&scale=1&customid={style}'
 class BaiduImageryProvider {
   constructor(options = {}) {
-    this._url = 'http://api{s}.map.bdimg.com/customimage/tile?&x={x}&y={y}&z={z}&scale=1&customid={style}'
+    this._url = TEMP_MAP_URL
     this._tileWidth = 256
     this._tileHeight = 256
     this._maximumLevel = 18
