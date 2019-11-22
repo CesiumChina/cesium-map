@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2019-06-13 13:05:10
  * @Last Modified by: Caven
- * @Last Modified time: 2019-08-03 15:44:16
+ * @Last Modified time: 2019-11-22 10:31:25
  */
 
 const ELEC_URL = 'https://rt0.map.gtimg.com/tile?z={z}&x={x}&y={reverseY}&styleid=1000&scene=0&version=347'
