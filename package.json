@@ -1,15 +1,15 @@
 {
-  "name": "cesium-map",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/caven-chen/cesium-map.git",
-  "author": "Caven <374903123@qq.com>",
-  "license": "MIT",
+  "name": "@dvgis/cesium-map",
+  "version": "2.0.0",
+  "main": "src/index.js",
+  "repository": "https://github.com/Digital-Visual/cesium-map.git",
+  "author": "Caven Chen <cavencj@gmail.com>",
+  "license": "Apache 2.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "yarn run clean && webpack  --mode development ",
     "publish": "yarn run clean && webpack --mode production --env.production ",
-    "clean": "rimraf dist/"
+    "clean": "rimraf build/"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
