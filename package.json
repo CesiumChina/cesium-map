@@ -1,6 +1,6 @@
 {
   "name": "@dvgis/cesium-map",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "src/index.js",
   "repository": "https://github.com/Digital-Visual/cesium-map.git",
   "author": "Caven Chen <cavencj@gmail.com>",
@@ -11,6 +11,13 @@
     "publish": "yarn run clean && webpack --mode production --env.production ",
     "clean": "rimraf build/"
   },
+  "keywords": [
+    "3D",
+    "webgl",
+    "map",
+    "globe",
+    "cesium"
+  ],
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/plugin-transform-runtime": "^7.4.0",
