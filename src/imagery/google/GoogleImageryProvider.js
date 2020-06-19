@@ -2,7 +2,7 @@
  * @Author: Caven
  * @Date: 2020-01-21 16:06:14
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-08 21:19:12
+ * @Last Modified time: 2020-06-19 10:57:10
  */
 
 const ELEC_URL =
@@ -23,7 +23,7 @@ class GoogleImageryProvider extends Cesium.UrlTemplateImageryProvider {
         ? TER_URL
         : ELEC_URL
     if (!options.subdomains || !options.subdomains.length) {
-      options['subdomains'] = ['1', '2', '3', '4', '5']
+      options['subdomains'] = ['1', '2', '3']
     }
     super(options)
   }
