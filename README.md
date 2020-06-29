@@ -1,8 +1,16 @@
 # cesium-map
 
-cesium-map
+<p>
+<img src="https://img.shields.io/badge/license-Apache%202-blue"/>
+<img src="https://img.shields.io/github/package-json/v/Digital-Visual/cesium-map?color=orange&logo=github" />
+<img src="https://img.shields.io/npm/dw/@dvgis/cesium-map?logo=npm"/>
+</p>
 
-> 使用前引入 Cesium 框架
+> Cesium 地图插件，方便接入国内地图
+
+```warning
+ 使用前引入 Cesium 框架
+```
 
 ## BaiduImageryProvider
 
@@ -10,7 +18,7 @@ cesium-map
 
 ```js
 var options = {
-  style: 'normal'
+  style: 'normal' // 样式参数
 }
 viewer.imageryLayers.addImageryProvider(
   new Cesium.BaiduImageryProvider(options)
@@ -54,7 +62,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider(options))
 
 ```js
 var options = {
-  style: 'img' //矢量地图
+  style: 'img' //影像地图
 }
 viewer.imageryLayers.addImageryProvider(
   new Cesium.GoogleImageryProvider(options)
