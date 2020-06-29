@@ -6,10 +6,28 @@
 <img src="https://img.shields.io/npm/dw/@dvgis/cesium-map?logo=npm"/>
 </p>
 
-> Cesium 地图插件，方便接入国内地图
+> Cesium 地图插件，接入国内地图供应商的瓦片
 
 ```warning
  使用前引入 Cesium 框架
+```
+
+## 安装
+
+> CDN
+
+```html
+<script src="cesium-map/cesium.map.min.js"></script>
+```
+
+> NPM / YARN
+
+```shell
+   yarn add @dvgis/cesium-map
+```
+
+```js
+import '@dvgis/cesium-map/build/cesium.map.min'
 ```
 
 ## BaiduImageryProvider

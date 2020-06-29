@@ -2,11 +2,11 @@
  * @Author: Caven
  * @Date: 2019-03-28 12:44:36
  * @Last Modified by: Caven
- * @Last Modified time: 2020-05-08 21:12:15
+ * @Last Modified time: 2020-06-29 13:06:51
  */
 const path = require('path')
 const webpack = require('webpack')
-module.exports = (env) => {
+module.exports = env => {
   const IS_PROD = (env && env.production) || false
   let plugins = []
   if (IS_PROD) {
@@ -14,16 +14,16 @@ module.exports = (env) => {
   }
   return {
     entry: {
-      'cesium-map': ['entry'],
+      'cesium.map': ['entry']
     },
     devtool: IS_PROD ? false : 'cheap-module-eval-source-map',
     output: {
       filename: IS_PROD ? '[name].min.js' : '[name].js',
       path: path.resolve(__dirname, 'build/cesium-map'),
-      sourcePrefix: '',
+      sourcePrefix: ''
     },
     amd: {
-      toUrlUndefinded: true,
+      toUrlUndefinded: true
     },
     module: {
       unknownContextCritical: false,
@@ -35,24 +35,24 @@ module.exports = (env) => {
           query: {
             presets: ['@babel/preset-env'],
             compact: false,
-            ignore: ['checkTree'],
-          },
+            ignore: ['checkTree']
+          }
         },
         {
           test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
           loader: 'url-loader',
           options: {
-            limit: 20000,
-          },
-        },
-      ],
+            limit: 20000
+          }
+        }
+      ]
     },
     resolve: {
       extensions: ['.js', '.json', '.css'],
       alias: {
-        entry: './src/index.js',
-      },
+        entry: './src/index.js'
+      }
     },
-    plugins,
+    plugins
   }
 }
