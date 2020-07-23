@@ -48,7 +48,13 @@ viewer.imageryLayers.addImageryProvider(
 > 腾讯地图
 
 ```js
-viewer.imageryLayers.addImageryProvider(new Cesium.TencentImageryProvider())
+var options = {
+  style: 1 //样式参数 1：经典
+}
+
+viewer.imageryLayers.addImageryProvider(
+  new Cesium.TencentImageryProvider(options)
+)
 ```
 
 ## TdtImageryProvider
