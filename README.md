@@ -27,7 +27,11 @@
 ```
 
 ```js
-import '@dvgis/cesium-map/build/cesium.map.min'
+
+import '@dvgis/cesium-map/build/cesium-map/cesium.map.min'  // 2.2 版本前
+
+import '@dvgis/cesium-map/build/cesium.map.min'  // 2.2 版本及以后
+
 ```
 
 ## BaiduImageryProvider

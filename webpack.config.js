@@ -1,8 +1,6 @@
-/*
+/**
  * @Author: Caven
  * @Date: 2019-03-28 12:44:36
- * @Last Modified by: Caven
- * @Last Modified time: 2020-06-29 13:06:51
  */
 const path = require('path')
 const webpack = require('webpack')
@@ -19,11 +17,11 @@ module.exports = env => {
     devtool: IS_PROD ? false : 'cheap-module-eval-source-map',
     output: {
       filename: IS_PROD ? '[name].min.js' : '[name].js',
-      path: path.resolve(__dirname, 'build/cesium-map'),
+      path: path.resolve(__dirname, 'build'),
       sourcePrefix: ''
     },
     amd: {
-      toUrlUndefinded: true
+      toUrlUndefined: true
     },
     module: {
       unknownContextCritical: false,
@@ -32,8 +30,9 @@ module.exports = env => {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
-          query: {
+          options: {
             presets: ['@babel/preset-env'],
+            plugins: ['@babel/transform-runtime'],
             compact: false,
             ignore: ['checkTree']
           }
