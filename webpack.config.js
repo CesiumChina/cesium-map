@@ -2,8 +2,10 @@
  * @Author: Caven
  * @Date: 2019-03-28 12:44:36
  */
+
 const path = require('path')
 const webpack = require('webpack')
+
 module.exports = env => {
   const IS_PROD = (env && env.production) || false
   let plugins = []
@@ -35,13 +37,6 @@ module.exports = env => {
             plugins: ['@babel/transform-runtime'],
             compact: false,
             ignore: ['checkTree']
-          }
-        },
-        {
-          test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-          loader: 'url-loader',
-          options: {
-            limit: 20000
           }
         }
       ]

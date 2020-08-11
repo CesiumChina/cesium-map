@@ -28,9 +28,9 @@
 
 ```js
 
-import '@dvgis/cesium-map/build/cesium-map/cesium.map.min'  // 2.2 版本前
+require('@dvgis/cesium-map/build/cesium-map/cesium.map.min')  // 2.2.0 版本前
 
-import '@dvgis/cesium-map/build/cesium.map.min'  // 2.2 版本及以后
+require('@dvgis/cesium-map/build/cesium.map.min') // 2.2.0 版本及以后
 
 ```
 
@@ -40,7 +40,7 @@ import '@dvgis/cesium-map/build/cesium.map.min'  // 2.2 版本及以后
 
 ```js
 var options = {
-  style: 'normal' // 样式参数
+  style: 'normal' // style: img、vec、normal、dark
 }
 viewer.imageryLayers.addImageryProvider(
   new Cesium.BaiduImageryProvider(options)
@@ -79,7 +79,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
 
 ```js
 var options = {
-  style: 'img'
+  style: 'img' // style: img、elec
 }
 viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider(options))
 ```
@@ -90,7 +90,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider(options))
 
 ```js
 var options = {
-  style: 'img' //影像地图
+  style: 'img' //style: img、elec
 }
 viewer.imageryLayers.addImageryProvider(
   new Cesium.GoogleImageryProvider(options)

@@ -1,6 +1,6 @@
 {
   "name": "@dvgis/cesium-map",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": "src/index.js",
   "repository": "https://github.com/dvgis/cesium-map.git",
   "homepage": "https://www.dvgis.cn",
@@ -8,10 +8,12 @@
   "license": "Apache 2.0",
   "keywords": [
     "3D",
-    "webgl",
+    "cesium",
     "map",
-    "globe",
-    "cesium"
+    "baidu",
+    "amap",
+    "tencent",
+    "tdt"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -35,8 +37,6 @@
     "eslint-plugin-promise": "^4.0.1",
     "prettier": "^1.16.4",
     "rimraf": "^2.6.3",
-    "uglifyjs-webpack-plugin": "^2.1.2",
-    "url-loader": "^1.1.2",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
   }
