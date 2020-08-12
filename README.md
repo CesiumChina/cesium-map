@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/npm/dw/@dvgis/cesium-map?logo=npm"/>
 </p>
 
-> Cesium 地图插件，接入国内地图供应商的瓦片
+> Cesium 地图插件，用于添加国内各大地图厂商的地图
 
 ```warning
  使用前引入 Cesium 框架
@@ -23,6 +23,7 @@
 > NPM / YARN
 
 ```shell
+   npm install @dvgis/cesium-map
    yarn add @dvgis/cesium-map
 ```
 
@@ -90,7 +91,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider(options))
 
 ```js
 var options = {
-  style: 'img' //style: img、elec
+  style: 'img' //style: img、elec、ter
 }
 viewer.imageryLayers.addImageryProvider(
   new Cesium.GoogleImageryProvider(options)
