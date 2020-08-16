@@ -1,8 +1,6 @@
-/*
+/**
  * @Author: Caven
  * @Date: 2020-01-21 16:06:14
- * @Last Modified by: Caven
- * @Last Modified time: 2020-06-19 10:57:10
  */
 
 const ELEC_URL =

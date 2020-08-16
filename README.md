@@ -54,7 +54,7 @@ viewer.imageryLayers.addImageryProvider(
 
 ```js
 var options = {
-  style: 1 //样式参数 1：经典
+  style: 1 //style: img、1：经典
 }
 
 viewer.imageryLayers.addImageryProvider(
@@ -97,3 +97,6 @@ viewer.imageryLayers.addImageryProvider(
   new Cesium.GoogleImageryProvider(options)
 )
 ```
+## 示例
+
+> http://dc.dvgis.cn
