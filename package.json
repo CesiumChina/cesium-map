@@ -1,6 +1,6 @@
 {
   "name": "@dvgis/cesium-map",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "main": "src/index.js",
   "repository": "https://github.com/dvgis/cesium-map.git",
   "homepage": "https://www.dvgis.cn",

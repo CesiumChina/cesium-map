@@ -2,7 +2,7 @@
 
 <p>
 <img src="https://img.shields.io/badge/license-Apache%202-blue"/>
-<img src="https://img.shields.io/github/package-json/v/Digital-Visual/cesium-map?color=orange&logo=github" />
+<img src="https://img.shields.io/npm/v/@dvgis/cesium-map?color=orange&logo=github" />
 <img src="https://img.shields.io/npm/dw/@dvgis/cesium-map?logo=npm"/>
 </p>
 
@@ -14,17 +14,17 @@
 
 ## 安装
 
-> CDN
+`CDN`
 
 ```html
 <script src="cesium-map/cesium.map.min.js"></script>
 ```
 
-> NPM / YARN
+`NPM / YARN`
 
 ```shell
-   npm install @dvgis/cesium-map
-   yarn add @dvgis/cesium-map
+npm install @dvgis/cesium-map
+yarn add @dvgis/cesium-map
 ```
 
 ```js
@@ -68,7 +68,7 @@ viewer.imageryLayers.addImageryProvider(
 
 ```js
 var options = {
-  style: 'vec',
+  style: 'vec', //style: img、vec、vca、ter
   key: ''
 }
 viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
@@ -97,6 +97,7 @@ viewer.imageryLayers.addImageryProvider(
   new Cesium.GoogleImageryProvider(options)
 )
 ```
+
 ## 示例
 
 > http://dc.dvgis.cn
