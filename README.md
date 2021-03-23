@@ -14,26 +14,24 @@
 
 ## 安装
 
+`NPM / YARN`
+
+```shell
+npm install @dvgis/cesium-map
+-----------------------------
+yarn add @dvgis/cesium-map
+```
+
+```js
+require('@dvgis/cesium-map')
+```
+
 `CDN`
 
 ```html
 <script src="cesium-map/cesium.map.min.js"></script>
 ```
 
-`NPM / YARN`
-
-```shell
-npm install @dvgis/cesium-map
-yarn add @dvgis/cesium-map
-```
-
-```js
-
-require('@dvgis/cesium-map/build/cesium-map/cesium.map.min')  // 2.2.0 版本前
-
-require('@dvgis/cesium-map/build/cesium.map.min') // 2.2.0 版本及以后
-
-```
 
 ## BaiduImageryProvider
 
@@ -81,7 +79,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
 
 ```js
 var options = {
-  style: 'img', // style: img、elec
+  style: 'img', // style: img、elec、vca
   crs: 'WGS84' // 使用84坐标系，默认为：GCJ02
 }
 viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider(options))
