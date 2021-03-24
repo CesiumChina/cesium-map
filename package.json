@@ -17,8 +17,8 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "yarn run clean && webpack  --mode development ",
-    "publish": "yarn run clean && webpack --mode production --env.production ",
+    "dev": "yarn run clean && webpack  --mode development ",
+    "build": "yarn run clean && webpack --mode production --env.production ",
     "clean": "rimraf build/"
   },
   "devDependencies": {

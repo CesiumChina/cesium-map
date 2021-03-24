@@ -1,6 +1,7 @@
 # cesium-map
 
 <p>
+<img src="https://img.shields.io/github/workflow/status/dvgis/cesium-map/publish"/>
 <img src="https://img.shields.io/badge/license-Apache%202-blue"/>
 <img src="https://img.shields.io/npm/v/@dvgis/cesium-map?color=orange&logo=github" />
 <img src="https://img.shields.io/npm/dw/@dvgis/cesium-map?logo=npm"/>
@@ -29,7 +30,7 @@ require('@dvgis/cesium-map')
 `CDN`
 
 ```html
-<script src="cesium-map/cesium.map.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@dvgis/cesium-map"></script>
 ```
 
 
