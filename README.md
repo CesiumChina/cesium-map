@@ -4,7 +4,7 @@
 <img src="https://img.shields.io/github/workflow/status/dvgis/cesium-map/build"/>
 <img src="https://img.shields.io/badge/license-Apache%202-blue"/>
 <img src="https://img.shields.io/npm/v/@dvgis/cesium-map?color=orange&logo=github" />
-<img src="https://img.shields.io/npm/dw/@dvgis/cesium-map?logo=npm"/>
+<img src="https://img.shields.io/npm/dt/@dvgis/cesium-map?logo=npm"/>
 </p>
 
 > Cesium 地图插件，用于添加国内各大地图厂商的地图
