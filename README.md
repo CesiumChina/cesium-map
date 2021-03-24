@@ -1,7 +1,7 @@
 # cesium-map
 
 <p>
-<img src="https://img.shields.io/github/workflow/status/dvgis/cesium-map/publish"/>
+<img src="https://img.shields.io/github/workflow/status/dvgis/cesium-map/build"/>
 <img src="https://img.shields.io/badge/license-Apache%202-blue"/>
 <img src="https://img.shields.io/npm/v/@dvgis/cesium-map?color=orange&logo=github" />
 <img src="https://img.shields.io/npm/dw/@dvgis/cesium-map?logo=npm"/>
