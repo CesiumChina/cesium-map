@@ -67,7 +67,7 @@ viewer.imageryLayers.addImageryProvider(
 
 ```js
 var options = {
-  style: 'vec', //style: img、vec、vca、ter
+  style: 'vec', //style: vec、cva、img、cia、ter 
   key: ''
 }
 viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
@@ -79,7 +79,7 @@ viewer.imageryLayers.addImageryProvider(new Cesium.TdtImageryProvider(options))
 
 ```js
 var options = {
-  style: 'img', // style: img、elec、vca
+  style: 'img', // style: img、elec、cva
   crs: 'WGS84' // 使用84坐标系，默认为：GCJ02
 }
 viewer.imageryLayers.addImageryProvider(new Cesium.AmapImageryProvider(options))
