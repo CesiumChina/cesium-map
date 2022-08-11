@@ -5,23 +5,24 @@
 
 import BaiduMercatorTilingScheme from './BaiduMercatorTilingScheme'
 
-const IMG_URL =
-  'http://shangetu{s}.map.bdimg.com/it/u=x={x};y={y};z={z};v=009;type=sate&fm=46'
-
-const VEC_URL =
-  'http://online{s}.map.bdimg.com/tile/?qt=tile&x={x}&y={y}&z={z}&styles=sl&v=020'
-
-const CUSTOM_URL =
-  'http://api{s}.map.bdimg.com/customimage/tile?&x={x}&y={y}&z={z}&scale=1&customid={style}'
-
+const TILE_URL = {
+  img:
+    '//shangetu{s}.map.bdimg.com/it/u=x={x};y={y};z={z};v=009;type=sate&fm=46',
+  vec:
+    '//online{s}.map.bdimg.com/tile/?qt=tile&x={x}&y={y}&z={z}&styles=sl&v=020',
+  custom:
+    '//api{s}.map.bdimg.com/customimage/tile?&x={x}&y={y}&z={z}&scale=1&customid={style}',
+  traffic:
+    '//its.map.baidu.com:8002/traffic/TrafficTileService?time={time}&label={labelStyle}&v=016&level={z}&x={x}&y={y}&scaler=2'
+}
 class BaiduImageryProvider {
   constructor(options = {}) {
     this._url =
-      options.style === 'img'
-        ? IMG_URL
-        : options.style === 'vec'
-        ? VEC_URL
-        : CUSTOM_URL
+      options.url ||
+      [
+        options.protocol || '',
+        TILE_URL[options.style] || TILE_URL['custom']
+      ].join('')
     this._tileWidth = 256
     this._tileHeight = 256
     this._maximumLevel = 18
@@ -51,6 +52,7 @@ class BaiduImageryProvider {
     this._rectangle = this._tilingScheme.rectangle
     this._credit = undefined
     this._style = options.style || 'normal'
+    this._errorEvent = new Cesium.Event()
   }
 
   get url() {
@@ -117,6 +119,10 @@ class BaiduImageryProvider {
 
   get ready() {
     return !!this._url
+  }
+
+  get errorEvent() {
+    return this._errorEvent
   }
 
   get credit() {
