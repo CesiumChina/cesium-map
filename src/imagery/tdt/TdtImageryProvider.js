@@ -4,7 +4,7 @@
  */
 
 const MAP_URL =
-  '//t{s}.tianditu.gov.cn/DataServer?T={style}_c&x={x}&y={y}&l={z}&tk={key}'
+  '//t{s}.tianditu.gov.cn/DataServer?T={style}_w&x={x}&y={y}&l={z}&tk={key}'
 
 class TdtImageryProvider extends Cesium.UrlTemplateImageryProvider {
   constructor(options = {}) {
