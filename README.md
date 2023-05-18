@@ -10,7 +10,7 @@
 > Cesium 地图插件，用于添加国内各大地图厂商的地图
 
 ```warning
- 使用前引入 Cesium 框架,Cesium放弃了ImageryProvider部分属性调,建议使用`viewer.imageryLayers.add`添加地图
+ 使用前引入 Cesium 框架,由于Cesium放弃了ImageryProvider部分属性,建议使用`viewer.imageryLayers.add`添加地图
 ```
 
 ## 安装
