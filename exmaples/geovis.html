@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>星图地图</title>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.105.1/Build/Cesium/Cesium.js"></script>
+  <script src="../dist/cesium.map.min.js"></script>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.105.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    html,body,.viewer-container{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+<div class="viewer-container" id="viewer-container"></div>
+</body>
+
+<script>
+  let viewer = new Cesium.Viewer("viewer-container",{
+    baseLayer:false,
+    baseLayerPicker:false,
+    sceneModePicker:false,
+    navigationHelpButton:false,
+    homeButton:false,
+    infoBox:false,
+    timeline:false,
+    animation:false,
+    vrButton:false,
+    geocoder:false,
+    fullscreenButton:false,
+    navigationInstructionsInitiallyVisible:false,
+    shouldAnimate:true
+  })
+  viewer.imageryLayers.removeAll()
+  viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK)
+  viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK)
+  viewer.cesiumWidget.creditContainer.style.display='none'
+  viewer.imageryLayers.add(new Cesium.ImageryLayer(new GeoVisImageryProvider()))
+</script>
+</html>

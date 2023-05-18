@@ -1,16 +1,11 @@
 /**
- * @Author: Caven
- * @Date: 2021-01-16 12:14:05
+ @author : Caven Chen
+ @date : 2023-05-18
  */
 
-import BaiduImageryProvider from './imagery/baidu/BaiduImageryProvider'
-import AmapImageryProvider from './imagery/amap/AmapImageryProvider'
-import TencentImageryProvider from './imagery/tencent/TencentImageryProvider'
-import TdtImageryProvider from './imagery/tdt/TdtImageryProvider'
-import GoogleImageryProvider from './imagery/google/GoogleImageryProvider'
-
-Cesium.AmapImageryProvider = AmapImageryProvider
-Cesium.BaiduImageryProvider = BaiduImageryProvider
-Cesium.TencentImageryProvider = TencentImageryProvider
-Cesium.TdtImageryProvider = TdtImageryProvider
-Cesium.GoogleImageryProvider = GoogleImageryProvider
+export { default as BaiduImageryProvider } from './imagery/baidu/BaiduImageryProvider'
+export { default as AmapImageryProvider } from './imagery/amap/AmapImageryProvider'
+export { default as TencentImageryProvider } from './imagery/tencent/TencentImageryProvider'
+export { default as TdtImageryProvider } from './imagery/tdt/TdtImageryProvider'
+export { default as GoogleImageryProvider } from './imagery/google/GoogleImageryProvider'
+export { default as GeoVisImageryProvider } from './imagery/geovis/GeoVisImageryProvider.js'

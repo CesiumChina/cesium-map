@@ -3,34 +3,42 @@
  * @Date: 2021-01-31 22:07:05
  */
 
+import {
+  WebMercatorTilingScheme,
+  WebMercatorProjection,
+  Math as CesiumMath,
+  Cartographic,
+  Cartesian2,
+} from 'cesium/Build/Cesium'
+
 import CoordTransform from '../../transform/CoordTransform'
 
-class AmapMercatorTilingScheme extends Cesium.WebMercatorTilingScheme {
+class AmapMercatorTilingScheme extends WebMercatorTilingScheme {
   constructor(options) {
     super(options)
-    let projection = new Cesium.WebMercatorProjection()
-    this._projection.project = function(cartographic, result) {
+    let projection = new WebMercatorProjection()
+    this._projection.project = function (cartographic, result) {
       result = CoordTransform.WGS84ToGCJ02(
-        Cesium.Math.toDegrees(cartographic.longitude),
-        Cesium.Math.toDegrees(cartographic.latitude)
+        CesiumMath.toDegrees(cartographic.longitude),
+        CesiumMath.toDegrees(cartographic.latitude)
       )
       result = projection.project(
-        new Cesium.Cartographic(
-          Cesium.Math.toRadians(result[0]),
-          Cesium.Math.toRadians(result[1])
+        new Cartographic(
+          CesiumMath.toRadians(result[0]),
+          CesiumMath.toRadians(result[1])
         )
       )
-      return new Cesium.Cartesian2(result.x, result.y)
+      return new Cartesian2(result.x, result.y)
     }
-    this._projection.unproject = function(cartesian, result) {
+    this._projection.unproject = function (cartesian, result) {
       let cartographic = projection.unproject(cartesian)
       result = CoordTransform.GCJ02ToWGS84(
-        Cesium.Math.toDegrees(cartographic.longitude),
-        Cesium.Math.toDegrees(cartographic.latitude)
+        CesiumMath.toDegrees(cartographic.longitude),
+        CesiumMath.toDegrees(cartographic.latitude)
       )
-      return new Cesium.Cartographic(
-        Cesium.Math.toRadians(result[0]),
-        Cesium.Math.toRadians(result[1])
+      return new Cartographic(
+        CesiumMath.toRadians(result[0]),
+        CesiumMath.toRadians(result[1])
       )
     }
   }
