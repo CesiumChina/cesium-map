@@ -9,7 +9,7 @@ import {
   DeveloperError,
   ImageryProvider,
   UrlTemplateImageryProvider,
-} from 'cesium/Build/Cesium'
+} from '@cesium/engine'
 
 import BaiduMercatorTilingScheme from './BaiduMercatorTilingScheme'
 

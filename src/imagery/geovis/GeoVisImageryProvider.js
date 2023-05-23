@@ -3,7 +3,7 @@
  @date : 2023-05-18
  */
 
-import { UrlTemplateImageryProvider } from 'cesium/Build/Cesium'
+import { UrlTemplateImageryProvider } from '@cesium/engine'
 
 const TILE_URL =
   '//tiles{s}.geovisearth.com/base/v1/{style}/{z}/{x}/{y}?format={format}&tmsIds=w&token={key}'

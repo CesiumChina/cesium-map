@@ -45,6 +45,10 @@
     "rollup": "^3.21.8"
   },
   "dependencies": {
-    "cesium": "^1.105.2"
-  }
+    "@cesium/engine": "^2.4.0"
+  },
+  "files": [
+    "dist",
+    "src"
+  ]
 }

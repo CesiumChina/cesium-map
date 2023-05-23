@@ -3,7 +3,7 @@
  * @Date: 2020-01-21 16:10:47
  */
 
-import { UrlTemplateImageryProvider } from 'cesium/Build/Cesium'
+import { UrlTemplateImageryProvider } from '@cesium/engine'
 
 const TILE_URL = {
   img: '//p{s}.map.gtimg.com/sateTiles/{z}/{sx}/{sy}/{x}_{reverseY}.jpg?version=400',

@@ -12,7 +12,7 @@ import terser from '@rollup/plugin-terser'
 async function buildMap(options) {
   const bundle = await rollup({
     input: 'src/index',
-    external: ['cesium/Build/Cesium'],
+    external: ['@cesium/engine'],
     plugins: [
       commonjs(),
       resolve({ preferBuiltins: true }),
@@ -43,7 +43,7 @@ async function buildMap(options) {
       name: 'window',
       extend: true,
       globals: {
-        'cesium/Build/Cesium': 'Cesium',
+        '@cesium/engine': 'Cesium',
       },
       sourcemap: false,
     })

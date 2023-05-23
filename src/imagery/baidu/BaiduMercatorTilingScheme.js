@@ -10,7 +10,7 @@ import {
   Cartesian2,
   Rectangle,
   defined,
-} from 'cesium/Build/Cesium'
+} from '@cesium/engine'
 
 import BaiduMercatorProjection from './BaiduMercatorProjection'
 import CoordTransform from '../../transform/CoordTransform'

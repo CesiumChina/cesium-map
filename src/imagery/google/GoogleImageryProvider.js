@@ -3,7 +3,7 @@
  * @Date: 2020-01-21 16:06:14
  */
 
-import { UrlTemplateImageryProvider } from 'cesium/Build/Cesium'
+import { UrlTemplateImageryProvider } from '@cesium/engine'
 
 const TILE_URL = {
   img: '//mt{s}.google.cn/vt/lyrs=s&hl=zh-CN&x={x}&y={y}&z={z}&s=Gali',

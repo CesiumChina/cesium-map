@@ -3,9 +3,12 @@
  * @Date: 2021-01-31 20:40:25
  */
 
+// eslint-disable-next-line no-loss-of-precision
 const BD_FACTOR = (3.14159265358979324 * 3000.0) / 180.0
+// eslint-disable-next-line no-loss-of-precision
 const PI = 3.1415926535897932384626
 const RADIUS = 6378245.0
+// eslint-disable-next-line no-loss-of-precision
 const EE = 0.00669342162296594323
 
 class CoordTransform {

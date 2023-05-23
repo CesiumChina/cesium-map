@@ -9,7 +9,7 @@ import {
   Math as CesiumMath,
   Cartographic,
   Cartesian2,
-} from 'cesium/Build/Cesium'
+} from '@cesium/engine'
 
 import CoordTransform from '../../transform/CoordTransform'
 

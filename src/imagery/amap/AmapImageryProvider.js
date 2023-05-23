@@ -4,7 +4,7 @@
  */
 
 import AmapMercatorTilingScheme from './AmapMercatorTilingScheme'
-import { UrlTemplateImageryProvider } from 'cesium/Build/Cesium'
+import { UrlTemplateImageryProvider } from '@cesium/engine'
 
 const TILE_URL = {
   img: '//webst{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}',
