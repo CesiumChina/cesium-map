@@ -30,7 +30,7 @@ import { AmapImageryProvider,BaiduImageryProvider, GeoVisImageryProvider }  from
 `CDN`
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@dvgis/cesium-map"></script>
+<script src="https://cdn.jsdelivr.net/npm/@dvgis/cesium-map/dist/cesium.map.min.js"></script>
 ```
 
 ## AmapImageryProvider
