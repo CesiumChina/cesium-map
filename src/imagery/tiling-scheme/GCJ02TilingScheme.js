@@ -13,7 +13,7 @@ import {
 
 import CoordTransform from '../../transform/CoordTransform'
 
-class AmapMercatorTilingScheme extends WebMercatorTilingScheme {
+class GCJ02TilingScheme extends WebMercatorTilingScheme {
   constructor(options) {
     super(options)
     let projection = new WebMercatorProjection()
@@ -44,4 +44,4 @@ class AmapMercatorTilingScheme extends WebMercatorTilingScheme {
   }
 }
 
-export default AmapMercatorTilingScheme
+export default GCJ02TilingScheme

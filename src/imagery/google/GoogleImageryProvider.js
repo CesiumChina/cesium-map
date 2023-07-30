@@ -4,11 +4,14 @@
  */
 
 import { UrlTemplateImageryProvider } from '@cesium/engine'
+import GCJ02TilingScheme from '../tiling-scheme/GCJ02TilingScheme'
 
 const TILE_URL = {
-  img: '//mt{s}.google.cn/vt/lyrs=s&hl=zh-CN&x={x}&y={y}&z={z}&s=Gali',
-  elec: '//mt{s}.google.cn/vt/lyrs=m@207000000&hl=zh-CN&gl=CN&src=app&x={x}&y={y}&z={z}&s=Galile',
-  ter: '//mt{s}.google.cn/vt/lyrs=t@131,r@227000000&hl=zh-CN&gl=cn&x={x}&y={y}&z={z}&s=Galile',
+  img: 'https://gac-geo.googlecnapps.cn/maps/vt?lyrs=s&x={x}&y={y}&z={z}',
+  elec: 'https://gac-geo.googlecnapps.cn/maps/vt?lyrs=m&x={x}&y={y}&z={z}',
+  cva: 'https://gac-geo.googlecnapps.cn/maps/vt?lyrs=h&x={x}&y={y}&z={z}',
+  ter: 'https://gac-geo.googlecnapps.cn/maps/vt?lyrs=t@131,r&x={x}&y={y}&z={z}',
+  img_cva: 'https://gac-geo.googlecnapps.cn/maps/vt?lyrs=y&x={x}&y={y}&z={z}',
 }
 
 class GoogleImageryProvider extends UrlTemplateImageryProvider {
@@ -19,7 +22,9 @@ class GoogleImageryProvider extends UrlTemplateImageryProvider {
         options.protocol || '',
         TILE_URL[options.style] || TILE_URL['elec'],
       ].join('')
-    options['subdomains'] = options.subdomains || ['1', '2', '3']
+    if (options.crs === 'WGS84') {
+      options['tilingScheme'] = new GCJ02TilingScheme()
+    }
     super(options)
   }
 }

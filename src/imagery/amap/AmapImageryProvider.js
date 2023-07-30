@@ -3,7 +3,7 @@
  * @Date: 2020-01-15 20:31:28
  */
 
-import AmapMercatorTilingScheme from './AmapMercatorTilingScheme'
+import GCJ02TilingScheme from '../tiling-scheme/GCJ02TilingScheme'
 import { UrlTemplateImageryProvider } from '@cesium/engine'
 
 const TILE_URL = {
@@ -24,7 +24,7 @@ class AmapImageryProvider extends UrlTemplateImageryProvider {
       options['subdomains'] = ['01', '02', '03', '04']
     }
     if (options.crs === 'WGS84') {
-      options['tilingScheme'] = new AmapMercatorTilingScheme()
+      options['tilingScheme'] = new GCJ02TilingScheme()
     }
     super(options)
   }

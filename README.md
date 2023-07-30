@@ -49,7 +49,7 @@ viewer.imageryLayers.add(new Cesium.ImageryLayer( new AmapImageryProvider(option
 
 > 百度地图
 
-```js
+```js 
 var options = {
   style: 'normal', // style: img、vec、normal、dark
   crs: 'WGS84' // 使用84坐标系，默认为：BD09
@@ -72,11 +72,12 @@ viewer.imageryLayers.add(new Cesium.ImageryLayer( new GeoVisImageryProvider(opti
 
 ## GoogleImageryProvider
 
-> 谷歌地图(已被墙)
+> 谷歌地图
 
 ```js
 var options = {
-  style: 'img' //style: img、elec、ter
+  style: 'elec',//style: img、elec、ter,cva,img_cva
+  crs: 'WGS84' // 使用84坐标系，默认为：GCJ02, img除外
 }
 viewer.imageryLayers.add(new Cesium.ImageryLayer( new GoogleImageryProvider(options)))
 ```

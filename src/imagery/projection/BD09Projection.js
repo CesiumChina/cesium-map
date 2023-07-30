@@ -72,7 +72,7 @@ const LL2MC = [
   ],
 ]
 
-class BaiduMercatorProjection {
+class BD09Projection {
   constructor() {
     this.isWgs84 = false
   }
@@ -404,4 +404,4 @@ class BaiduMercatorProjection {
   }
 }
 
-export default BaiduMercatorProjection
+export default BD09Projection
