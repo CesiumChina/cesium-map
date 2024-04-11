@@ -12,7 +12,7 @@ const TILE_URL = {
   cva: '//webst{s}.is.autonavi.com/appmaptile?lang=zh_cn&size=1&scale=1&style=8&x={x}&y={y}&z={z}',
 }
 
-class AmapImageryProvider extends UrlTemplateImageryProvider {
+class AMapImageryProvider extends UrlTemplateImageryProvider {
   constructor(options = {}) {
     options['url'] =
       options.url ||
@@ -29,4 +29,4 @@ class AmapImageryProvider extends UrlTemplateImageryProvider {
     super(options)
   }
 }
-export default AmapImageryProvider
+export default AMapImageryProvider

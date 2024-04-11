@@ -3,59 +3,50 @@
  @date : 2023-05-15
  */
 import gulp from 'gulp'
-import { rollup } from 'rollup'
-import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
-import { babel } from '@rollup/plugin-babel'
-import terser from '@rollup/plugin-terser'
+import path from 'path'
+import esbuild from 'esbuild'
+import GlobalsPlugin from 'esbuild-plugin-globals'
+
+const buildConfig = {
+  entryPoints: ['src/index.js'],
+  bundle: true,
+  color: true,
+  legalComments: `inline`,
+  logLimit: 0,
+  target: `es2019`,
+  minify: true,
+  sourcemap: false,
+  write: true,
+  logLevel: 'info',
+  plugins: [],
+  external: ['@cesium/engine'],
+}
 
 async function buildMap(options) {
-  const bundle = await rollup({
-    input: 'src/index',
-    external: ['@cesium/engine'],
-    plugins: [
-      commonjs(),
-      resolve({ preferBuiltins: true }),
-      babel({
-        babelHelpers: 'runtime',
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              modules: false,
-              targets: {
-                browsers: ['> 1%', 'last 2 versions', 'ie >= 10'],
-              },
-            },
-          ],
-        ],
-        plugins: ['@babel/plugin-transform-runtime'],
-      }),
-      terser(),
-    ],
-  })
-
   // Build IIFE
   if (options.iife) {
-    await bundle.write({
-      file: 'dist/cesium.map.min.js',
+    await esbuild.build({
+      ...buildConfig,
       format: 'iife',
-      name: 'window',
-      extend: true,
-      globals: {
-        '@cesium/engine': 'Cesium',
-      },
-      sourcemap: false,
+      globalName: '',
+      plugins: [
+        GlobalsPlugin({
+          '@cesium/engine': 'Cesium',
+        }),
+      ],
+      outfile: path.join('dist', 'cesium.map.min.js'),
     })
   }
 
   // Build Node
   if (options.node) {
-    await bundle.write({
-      file: 'dist/index.cjs',
-      format: 'cjs',
-      sourcemap: false,
-    })
+    if (options.iife) {
+      await esbuild.build({
+        ...buildConfig,
+        format: 'esm',
+        outfile: path.join('dist', 'index.js'),
+      })
+    }
   }
 }
 
