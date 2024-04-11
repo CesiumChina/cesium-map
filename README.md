@@ -33,7 +33,7 @@ import { AmapImageryProvider,BaiduImageryProvider, GeoVisImageryProvider }  from
 <script src="https://cdn.jsdelivr.net/npm/@dvgis/cesium-map/dist/cesium.map.min.js"></script>
 ```
 
-## AmapImageryProvider
+## AMapImageryProvider
 
 > 高德地图
 
@@ -42,7 +42,7 @@ var options = {
   style: 'img', // style: img、elec、cva
   crs: 'WGS84' // 使用84坐标系，默认为：GCJ02
 }
-viewer.imageryLayers.add(new Cesium.ImageryLayer( new AmapImageryProvider(options)))
+viewer.imageryLayers.add(new Cesium.ImageryLayer( new AMapImageryProvider(options)))
 ```
 
 ## BaiduImageryProvider
@@ -104,6 +104,55 @@ var options = {
 }
 viewer.imageryLayers.add(new Cesium.ImageryLayer( new TencentImageryProvider(options)))
 ```
+
+> 以下类用于自定义瓦片的加载，根据瓦片比例尺和切图原点从新计算瓦片行列号，可用用于一些地方坐标系或者自定义切片方案的地图瓦片
+
+## CustomGeographicTilingScheme
+
+> 自定义地理平铺方案
+
+根据瓦片的比例尺`(degrees/px)`和切图原点从新计算瓦片行列号,最终会采用`EPSG:4326`的瓦片计算规则平铺瓦片`(可能会存在偏移)`
+
+```js
+var options = {
+  origin: [-180,90], //切图原点，默认为[-180,90]
+  zoomOffset: 0, //瓦片的0级对应Cesium的瓦片层级，值为： 0 - Cesium层级，若瓦片的0级对应Cesium的10级，则值为 0 - 10 = -10，同时在瓦片请求时{z}的数值替换时也需加上这个层级偏移值
+  tileSize: 256, //瓦片的大小，默认为256，即一张瓦片的大小为 256 * 256
+  resolutions:[],//瓦片每一层级分辨率
+  ellipsoid:Cesium.Ellipsoid.WGS84,// 平铺的椭球体,默认为 WGS84 椭球
+  rectangle:Cesium.Rectangle.MAX_VALUE,//平铺方案覆盖的矩形（以弧度表示）
+}
+viewer.imageryLayers.add(new Cesium.ImageryLayer(
+  new Cesium.TileCoordinatesImageryProvider({
+    tilingScheme: new Cesium.CustomGeographicTilingScheme(options),
+  })
+))
+```
+
+
+## CustomMercatorTilingScheme
+
+> 自定义摩卡拖平铺方案
+
+根据瓦片的比例尺`(meters/px)`和切图原点从新计算瓦片行列号,最终会采用`EPSG:3857`的瓦片计算规则平铺瓦片`(可能会存在偏移)`
+
+```js
+var options = {
+  origin: [-20037508.3427892, 20037508.3427892], //切图原点，默认为[-20037508.3427892, 20037508.3427892]
+  zoomOffset: 0, //瓦片的0级对应Cesium的瓦片层级，值为： 0 - Cesium层级，若瓦片的0级对应Cesium的10级，则值为 0 - 10 = -10，同时在瓦片请求时{z}的数值替换时也需加上这个层级偏移值
+  tileSize: 256, //瓦片的大小，默认为256，即一张瓦片的大小为 256 * 256
+  resolutions:[],//瓦片每一层级分辨率
+  ellipsoid:Cesium.Ellipsoid.WGS84,// 平铺的椭球体,默认为 WGS84 椭球
+  rectangleSouthwestInMeters: null,//切片方案覆盖的矩形的西南角，以米为单位。如果不指定该参数或矩形NortheastInMeters，则在经度方向上覆盖整个地球，在纬度方向上覆盖等距离，形成正方形投影
+  rectangleNortheastInMeters: null,//切片方案覆盖的矩形的东北角（以米为单位）。如果未指定此参数或矩形SouthwestInMeters，则在经度方向上覆盖整个地球，并在纬度方向上覆盖相等的距离，从而形成方形投影。
+}
+viewer.imageryLayers.add(new Cesium.ImageryLayer(
+  new Cesium.TileCoordinatesImageryProvider({
+    tilingScheme: new Cesium.CustomMercatorTilingScheme(options),
+  })
+))
+```
+
 
 ## 示例
 
