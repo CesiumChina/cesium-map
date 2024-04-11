@@ -24,7 +24,7 @@ yarn add @dvgis/cesium-map
 ```
 
 ```js
-import { AmapImageryProvider,BaiduImageryProvider, GeoVisImageryProvider }  from '@dvgis/cesium-map'
+import { AMapImageryProvider,BaiduImageryProvider, GeoVisImageryProvider }  from '@dvgis/cesium-map'
 ```
 
 `CDN`
