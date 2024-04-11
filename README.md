@@ -105,13 +105,13 @@ var options = {
 viewer.imageryLayers.add(new Cesium.ImageryLayer( new TencentImageryProvider(options)))
 ```
 
-### **_以下类用于自定义瓦片的加载，根据瓦片比例尺和切图原点从新计算瓦片行列号，可用于一些地方坐标系或者自定义切片方案的地图瓦片_**
+### **_以下类用于自定义瓦片的加载，根据瓦片比例尺和切图原点重新计算瓦片行列号，可用于一些地方坐标系或者自定义切片方案的地图瓦片_**
 
 ## CustomGeographicTilingScheme
 
 > 自定义地理平铺方案
 
-根据瓦片的比例尺`(degrees/px)`和切图原点从新计算瓦片行列号,最终会采用`EPSG:4326`的瓦片计算规则平铺瓦片`(可能会存在偏移)`
+根据瓦片的比例尺`(degrees/px)`和切图原点重新计算瓦片行列号,最终会采用`EPSG:4326`的瓦片计算规则平铺瓦片`(可能会存在偏移)`
 
 ```js
 var options = {
@@ -134,7 +134,7 @@ viewer.imageryLayers.add(new Cesium.ImageryLayer(
 
 > 自定义摩卡拖平铺方案
 
-根据瓦片的比例尺`(meters/px)`和切图原点从新计算瓦片行列号,最终会采用`EPSG:3857`的瓦片计算规则平铺瓦片`(可能会存在偏移)`
+根据瓦片的比例尺`(meters/px)`和切图原点重新计算瓦片行列号,最终会采用`EPSG:3857`的瓦片计算规则平铺瓦片`(可能会存在偏移)`
 
 ```js
 var options = {
