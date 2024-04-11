@@ -105,7 +105,7 @@ var options = {
 viewer.imageryLayers.add(new Cesium.ImageryLayer( new TencentImageryProvider(options)))
 ```
 
-> 以下类用于自定义瓦片的加载，根据瓦片比例尺和切图原点从新计算瓦片行列号，可用用于一些地方坐标系或者自定义切片方案的地图瓦片
+**_以下类用于自定义瓦片的加载，根据瓦片比例尺和切图原点从新计算瓦片行列号，可用用于一些地方坐标系或者自定义切片方案的地图瓦片_**
 
 ## CustomGeographicTilingScheme
 
