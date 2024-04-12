@@ -132,7 +132,7 @@ viewer.imageryLayers.add(new Cesium.ImageryLayer(
 
 ## CustomMercatorTilingScheme
 
-> 自定义摩卡拖平铺方案
+> 自定义墨卡托平铺方案
 
 根据瓦片的比例尺`(meters/px)`和切图原点重新计算瓦片行列号,最终会采用`EPSG:3857`的瓦片计算规则平铺瓦片`(可能会存在偏移)`
 
