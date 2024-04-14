@@ -14,7 +14,7 @@ const buildConfig = {
   legalComments: `inline`,
   logLimit: 0,
   target: `es2019`,
-  minify: false,
+  minify: true,
   sourcemap: false,
   write: true,
   logLevel: 'info',
