@@ -6,9 +6,9 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>高德地图</title>
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.105.1/Build/Cesium/Cesium.js"></script>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
   <script src="../dist/cesium.map.min.js"></script>
-  <link href="https://cesium.com/downloads/cesiumjs/releases/1.105.1/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"  rel="stylesheet"/>
 
   <style>
     *{
@@ -45,12 +45,12 @@
     geocoder:false,
     fullscreenButton:false,
     navigationInstructionsInitiallyVisible:false,
-    shouldAnimate:true
+    shouldAnimate:true,
+    creditContainer: document.createElement("div")
   })
   viewer.imageryLayers.removeAll()
   viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK)
   viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK)
-  viewer.cesiumWidget.creditContainer.style.display='none'
-  viewer.imageryLayers.add(new Cesium.ImageryLayer(new AmapImageryProvider({style:'img',crs:'WGS84' })))
+  viewer.imageryLayers.add(new Cesium.ImageryLayer(new Cesium.AMapImageryProvider({style:'img',crs:'WGS84' })))
 </script>
 </html>

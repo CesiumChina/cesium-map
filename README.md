@@ -42,7 +42,7 @@ var options = {
   style: 'img', // style: img、elec、cva
   crs: 'WGS84' // 使用84坐标系，默认为：GCJ02
 }
-viewer.imageryLayers.add(new Cesium.ImageryLayer( new AMapImageryProvider(options)))
+viewer.imageryLayers.add(new Cesium.ImageryLayer( new Cesium.AMapImageryProvider(options)))
 ```
 
 ## BaiduImageryProvider
@@ -54,7 +54,7 @@ var options = {
   style: 'normal', // style: img、vec、normal、dark
   crs: 'WGS84' // 使用84坐标系，默认为：BD09
 }
-viewer.imageryLayers.add(new Cesium.ImageryLayer( new BaiduImageryProvider(options)))
+viewer.imageryLayers.add(new Cesium.ImageryLayer( new Cesium.BaiduImageryProvider(options)))
 ```
 
 ## GeoVisImageryProvider
@@ -67,7 +67,7 @@ var options = {
   key:'', // 需去相关地图厂商申请
   format:'png' //format:png、webp(用于style为img)
 }
-viewer.imageryLayers.add(new Cesium.ImageryLayer( new GeoVisImageryProvider(options)))
+viewer.imageryLayers.add(new Cesium.ImageryLayer( new Cesium.GeoVisImageryProvider(options)))
 ```
 
 ## GoogleImageryProvider
@@ -79,7 +79,7 @@ var options = {
   style: 'elec',//style: img、elec、ter,cva,img_cva
   crs: 'WGS84' // 使用84坐标系，默认为：GCJ02, img除外
 }
-viewer.imageryLayers.add(new Cesium.ImageryLayer( new GoogleImageryProvider(options)))
+viewer.imageryLayers.add(new Cesium.ImageryLayer( new Cesium.GoogleImageryProvider(options)))
 ```
 
 ## TdtImageryProvider
@@ -91,7 +91,7 @@ var options = {
   style: 'vec', //style: vec、cva、img、cia、ter 
   key:'', // 需去相关地图厂商申请
 }
-viewer.imageryLayers.add(new Cesium.ImageryLayer( new TdtImageryProvider(options)))
+viewer.imageryLayers.add(new Cesium.ImageryLayer( new Cesium.TdtImageryProvider(options)))
 ```
 
 ## TencentImageryProvider
@@ -102,7 +102,7 @@ viewer.imageryLayers.add(new Cesium.ImageryLayer( new TdtImageryProvider(options
 var options = {
   style: 1 //style: img、1：经典
 }
-viewer.imageryLayers.add(new Cesium.ImageryLayer( new TencentImageryProvider(options)))
+viewer.imageryLayers.add(new Cesium.ImageryLayer( new Cesium.TencentImageryProvider(options)))
 ```
 
 ### **_以下类用于自定义瓦片的加载，根据瓦片比例尺和切图原点重新计算瓦片行列号，可用于一些地方坐标系或者自定义切片方案的地图瓦片_**

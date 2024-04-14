@@ -12,15 +12,26 @@ import GeoVisImageryProvider from './imagery/geovis/GeoVisImageryProvider.js'
 import CustomGeographicTilingScheme from './imagery/tiling-scheme/CustomGeographicTilingScheme.js'
 import CustomMercatorTilingScheme from './imagery/tiling-scheme/CustomMercatorTilingScheme.js'
 
-if (Cesium) {
-  Cesium.BaiduImageryProvider = BaiduImageryProvider
-  Cesium.AMapImageryProvider = AMapImageryProvider
-  Cesium.TencentImageryProvider = TencentImageryProvider
-  Cesium.TdtImageryProvider = TdtImageryProvider
-  Cesium.GoogleImageryProvider = GoogleImageryProvider
-  Cesium.GeoVisImageryProvider = GeoVisImageryProvider
-  Cesium.CustomGeographicTilingScheme = CustomGeographicTilingScheme
-  Cesium.CustomMercatorTilingScheme = CustomMercatorTilingScheme
+if (window && window.Cesium) {
+  if (Object.isFrozen(window.Cesium)) {
+    window.BaiduImageryProvider = BaiduImageryProvider
+    window.AMapImageryProvider = AMapImageryProvider
+    window.TencentImageryProvider = TencentImageryProvider
+    window.TdtImageryProvider = TdtImageryProvider
+    window.GoogleImageryProvider = GoogleImageryProvider
+    window.GeoVisImageryProvider = GeoVisImageryProvider
+    window.CustomGeographicTilingScheme = CustomGeographicTilingScheme
+    window.CustomMercatorTilingScheme = CustomMercatorTilingScheme
+  } else {
+    window.Cesium.BaiduImageryProvider = BaiduImageryProvider
+    window.Cesium.AMapImageryProvider = AMapImageryProvider
+    window.Cesium.TencentImageryProvider = TencentImageryProvider
+    window.Cesium.TdtImageryProvider = TdtImageryProvider
+    window.Cesium.GoogleImageryProvider = GoogleImageryProvider
+    window.Cesium.GeoVisImageryProvider = GeoVisImageryProvider
+    window.Cesium.CustomGeographicTilingScheme = CustomGeographicTilingScheme
+    window.Cesium.CustomMercatorTilingScheme = CustomMercatorTilingScheme
+  }
 }
 
 export {
