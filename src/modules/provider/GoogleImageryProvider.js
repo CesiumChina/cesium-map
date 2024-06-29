@@ -1,10 +1,9 @@
 /**
  * @Author: Caven
- * @Date: 2020-01-21 16:06:14
  */
 
-import { UrlTemplateImageryProvider } from '@cesium/engine'
-import GCJ02TilingScheme from '../tiling-scheme/GCJ02TilingScheme'
+import { UrlTemplateImageryProvider } from 'cesium'
+import GCJ02TilingScheme from '../tiling-scheme/GCJ02TilingScheme.js'
 
 const TILE_URL = {
   img: 'https://gac-geo.googlecnapps.cn/maps/vt?lyrs=s&x={x}&y={y}&z={z}',

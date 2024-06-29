@@ -1,10 +1,10 @@
 /**
- * @Author: Caven
- * @Date: 2020-01-15 20:31:28
+ * @Author: Caven Chen
+ * @Date: 2020-01-15
  */
 
-import GCJ02TilingScheme from '../tiling-scheme/GCJ02TilingScheme'
-import { UrlTemplateImageryProvider } from '@cesium/engine'
+import GCJ02TilingScheme from '../tiling-scheme/GCJ02TilingScheme.js'
+import { UrlTemplateImageryProvider } from 'cesium'
 
 const TILE_URL = {
   img: '//webst{s}.is.autonavi.com/appmaptile?style=6&x={x}&y={y}&z={z}',

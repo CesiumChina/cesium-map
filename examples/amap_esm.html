@@ -5,11 +5,8 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>天地图</title>
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
-  <script src="../dist/cesium.map.min.js"></script>
-  <link href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"  rel="stylesheet"/>
-
+  <title>高德地图</title>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Widgets/widgets.css"  rel="stylesheet"/>
   <style>
     *{
       padding: 0;
@@ -23,7 +20,6 @@
     }
 
   </style>
-
 </head>
 
 
@@ -31,7 +27,17 @@
 <div class="viewer-container" id="viewer-container"></div>
 </body>
 
-<script>
+<script type="importmap">
+  {
+    "imports": {
+      "cesium": "https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/index.js",
+      "@cesium-china/cesium-map": "../dist/index.js"
+    }
+  }
+</script>
+<script type="module">
+  import  * as Cesium from 'cesium'
+  import { AMapImageryProvider } from '@cesium-china/cesium-map'
   let viewer = new Cesium.Viewer("viewer-container",{
     baseLayer:false,
     baseLayerPicker:false,
@@ -45,12 +51,12 @@
     geocoder:false,
     fullscreenButton:false,
     navigationInstructionsInitiallyVisible:false,
-    shouldAnimate:true
+    shouldAnimate:true,
+    creditContainer: document.createElement("div")
   })
   viewer.imageryLayers.removeAll()
   viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK)
   viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK)
-  viewer.cesiumWidget.creditContainer.style.display='none'
-  viewer.imageryLayers.add(new Cesium.ImageryLayer(new TdtImageryProvider({style:'img',key:''})))
+  viewer.imageryLayers.add(new Cesium.ImageryLayer(new AMapImageryProvider({crs:'WGS84' })))
 </script>
 </html>

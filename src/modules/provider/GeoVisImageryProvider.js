@@ -1,9 +1,9 @@
 /**
- @author : Caven Chen
- @date : 2023-05-18
+ * @Author: Caven Chen
+ * @Date: 2020-01-15
  */
 
-import { UrlTemplateImageryProvider } from '@cesium/engine'
+import { UrlTemplateImageryProvider } from 'cesium'
 
 const TILE_URL =
   '//tiles{s}.geovisearth.com/base/v1/{style}/{z}/{x}/{y}?format={format}&tmsIds=w&token={key}'

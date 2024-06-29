@@ -1,14 +1,15 @@
 /**
- * @Author: Caven
- * @Date: 2024-04-06 20:40:25
+ * @Author: Caven Chen
+ * @Date: 2020-01-15
  */
+
 import {
   GeographicTilingScheme,
   Math as CesiumMath,
   Cartesian2,
   Rectangle,
   defined,
-} from '@cesium/engine'
+} from 'cesium'
 
 class CustomGeographicTilingScheme extends GeographicTilingScheme {
   constructor(options = {}) {

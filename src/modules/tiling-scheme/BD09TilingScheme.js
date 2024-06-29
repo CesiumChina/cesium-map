@@ -1,6 +1,6 @@
 /**
- * @Author: Caven
- * @Date: 2021-01-31 19:22:04
+ * @Author: Caven Chen
+ * @Date: 2020-01-15
  */
 
 import {
@@ -10,10 +10,10 @@ import {
   Cartesian2,
   Rectangle,
   defined,
-} from '@cesium/engine'
+} from 'cesium'
 
 import BD09Projection from '../projection/BD09Projection.js'
-import CoordTransform from '../../transform/CoordTransform'
+import CoordTransform from '../transform/CoordTransform.js'
 
 class BD09TilingScheme extends WebMercatorTilingScheme {
   constructor(options) {

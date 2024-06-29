@@ -1,16 +1,15 @@
 /**
- * @Author: Caven
- * @Date: 2020-01-15 20:27:27
+ * @Author: Caven Chen
+ * @Date: 2020-01-15
  */
-
 import {
   Cartesian2,
   WebMercatorTilingScheme,
   ImageryProvider,
   UrlTemplateImageryProvider,
-} from '@cesium/engine'
+} from 'cesium'
 
-import BD09TilingScheme from '../tiling-scheme/BD09TilingScheme'
+import BD09TilingScheme from '../tiling-scheme/BD09TilingScheme.js'
 
 const TILE_URL = {
   img: '//shangetu{s}.map.bdimg.com/it/u=x={x};y={y};z={z};v=009;type=sate&fm=46',

@@ -5,10 +5,10 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>谷歌地图</title>
-  <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+  <title>百度地图</title>
+  <script src="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Cesium.js"></script>
   <script src="../dist/cesium.map.min.js"></script>
-  <link href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"  rel="stylesheet"/>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Widgets/widgets.css"  rel="stylesheet"/>
 
   <style>
     *{
@@ -32,6 +32,7 @@
 </body>
 
 <script>
+
   let viewer = new Cesium.Viewer("viewer-container",{
     baseLayer:false,
     baseLayerPicker:false,
@@ -51,6 +52,6 @@
   viewer.imageryLayers.removeAll()
   viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK)
   viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK)
-  viewer.imageryLayers.add(new Cesium.ImageryLayer(new Cesium.GoogleImageryProvider({style:'img'})))
+  viewer.imageryLayers.add(new Cesium.ImageryLayer((new Cesium.BaiduImageryProvider({style:'img',crs:'WGS84'}))))
 </script>
 </html>

@@ -1,9 +1,9 @@
 /**
  * @Author: Caven
- * @Date: 2020-01-15 20:31:46
+ * @Date: 2020-01-15
  */
 
-import { UrlTemplateImageryProvider } from '@cesium/engine'
+import { UrlTemplateImageryProvider } from 'cesium'
 
 const TILE_URL =
   '//t{s}.tianditu.gov.cn/DataServer?T={style}_w&x={x}&y={y}&l={z}&tk={key}'

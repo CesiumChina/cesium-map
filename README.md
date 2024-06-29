@@ -1,10 +1,10 @@
 # cesium-map
 
 <p>
-<img src="https://img.shields.io/github/actions/workflow/status/dvgis/cesium-map/build.yml"/>
+<img src="https://img.shields.io/github/actions/workflow/status/cesium-china/cesium-map/build.yml"/>
 <img src="https://img.shields.io/badge/license-Apache%202-blue"/>
-<img src="https://img.shields.io/npm/v/@dvgis/cesium-map?color=orange&logo=github" />
-<img src="https://img.shields.io/npm/dw/@dvgis/cesium-map?logo=npm"/>
+<img src="https://img.shields.io/npm/v/@cesium-china/cesium-map?color=orange&logo=github" />
+<img src="https://img.shields.io/npm/dw/@cesium-china/cesium-map?logo=npm"/>
 </p>
 
 > Cesium 地图插件，用于添加国内各大地图厂商的地图
@@ -15,22 +15,22 @@
 
 ## 安装
 
-`NPM / YARN`
+`ESM`
 
 ```shell
-npm install @dvgis/cesium-map
+npm install @cesium-china/cesium-map
 -----------------------------
-yarn add @dvgis/cesium-map
+yarn add @cesium-china/cesium-map
 ```
 
 ```js
-import { AMapImageryProvider,BaiduImageryProvider, GeoVisImageryProvider }  from '@dvgis/cesium-map'
+import { AMapImageryProvider,BaiduImageryProvider, GeoVisImageryProvider }  from '@cesium-china/cesium-map'
 ```
 
 `CDN`
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@dvgis/cesium-map/dist/cesium.map.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@cesium-china/cesium-map/dist/cesium.map.min.js"></script>
 ```
 
 ## AMapImageryProvider
@@ -100,7 +100,8 @@ viewer.imageryLayers.add(new Cesium.ImageryLayer( new Cesium.TdtImageryProvider(
 
 ```js
 var options = {
-  style: 1 //style: img、1：经典
+  style: 1,//style: img、1：经典
+  crs: 'WGS84' // 使用84坐标系，默认为：GCJ02,
 }
 viewer.imageryLayers.add(new Cesium.ImageryLayer( new Cesium.TencentImageryProvider(options)))
 ```
@@ -156,4 +157,4 @@ viewer.imageryLayers.add(new Cesium.ImageryLayer(
 
 ## 示例
 
-> http://dc.dvgis.cn
+> examples目录下提供了CND和ESM的两种使用方式

@@ -1,14 +1,9 @@
 /**
- * @Author: Caven
- * @Date: 2024-04-06 20:40:25
+ * @Author: Caven Chen
+ * @Date: 2020-01-15
  */
 
-import {
-  WebMercatorTilingScheme,
-  Cartesian2,
-  Rectangle,
-  defined,
-} from '@cesium/engine'
+import { WebMercatorTilingScheme, Cartesian2, Rectangle, defined } from 'cesium'
 
 class CustomMercatorTilingScheme extends WebMercatorTilingScheme {
   constructor(options = {}) {

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>谷歌地图</title>
+  <link href="https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/Widgets/widgets.css"  rel="stylesheet"/>
+
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+
+    html,body,.viewer-container{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+<div class="viewer-container" id="viewer-container"></div>
+</body>
+
+
+<script type="importmap">
+  {
+    "imports": {
+      "cesium": "https://cesium.com/downloads/cesiumjs/releases/1.118/Build/Cesium/index.js",
+      "@cesium-china/cesium-map": "../dist/index.js"
+    }
+  }
+</script>
+
+<script type="module">
+  import  * as Cesium from 'cesium'
+  import { GoogleImageryProvider } from '@cesium-china/cesium-map'
+  let viewer = new Cesium.Viewer("viewer-container",{
+    baseLayer:false,
+    baseLayerPicker:false,
+    sceneModePicker:false,
+    navigationHelpButton:false,
+    homeButton:false,
+    infoBox:false,
+    timeline:false,
+    animation:false,
+    vrButton:false,
+    geocoder:false,
+    fullscreenButton:false,
+    navigationInstructionsInitiallyVisible:false,
+    shouldAnimate:true,
+    creditContainer: document.createElement("div")
+  })
+  viewer.imageryLayers.removeAll()
+  viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK)
+  viewer.cesiumWidget.screenSpaceEventHandler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK)
+  viewer.imageryLayers.add(new Cesium.ImageryLayer(new GoogleImageryProvider({style:'img'})))
+</script>
+</html>

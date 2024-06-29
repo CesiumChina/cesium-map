@@ -1,6 +1,6 @@
 /**
- * @Author: Caven
- * @Date: 2021-01-31 22:07:05
+ * @Author: Caven Chen
+ * @Date: 2020-01-15
  */
 
 import {
@@ -9,9 +9,9 @@ import {
   Math as CesiumMath,
   Cartographic,
   Cartesian2,
-} from '@cesium/engine'
+} from 'cesium'
 
-import CoordTransform from '../../transform/CoordTransform'
+import CoordTransform from '../transform/CoordTransform.js'
 
 class GCJ02TilingScheme extends WebMercatorTilingScheme {
   constructor(options) {
