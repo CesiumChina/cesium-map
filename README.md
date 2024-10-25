@@ -157,4 +157,4 @@ viewer.imageryLayers.add(new Cesium.ImageryLayer(
 
 ## 示例
 
-> examples目录下提供了CND和ESM的两种使用方式
+> examples目录下提供了CDN和ESM的两种使用方式
