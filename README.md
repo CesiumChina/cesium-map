@@ -33,6 +33,13 @@ import { AMapImageryProvider,BaiduImageryProvider, GeoVisImageryProvider }  from
 <script src="https://cdn.jsdelivr.net/npm/@cesium-china/cesium-map/dist/cesium.map.min.js"></script>
 ```
 
+## @types库
+```
+npm install -D @types/cesium-china__cesium-map
+-----------------------------
+yarn add  -D  @types/cesium-china__cesium-map
+```
+
 ## AMapImageryProvider
 
 > 高德地图
